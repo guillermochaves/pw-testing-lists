@@ -19,3 +19,10 @@ test('Validate page title', async ( { page } ) => {
 
   await expect(page.getByRole("heading", { name: "todos" })).toBeVisible();
 });
+
+test('Validate google page', async ({page}) => {
+  await page.goto('https://www.google.com')
+
+  await expect(page.locator('[title="Search"]')).toBeVisible()
+
+});
